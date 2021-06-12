@@ -1,0 +1,14 @@
+apiVersion: v1
+actions:  
+  - name: "Run jmeter"
+    events:
+      - name: "sh.keptn.event.test.triggered"
+        jsonpath:
+          property: "$.data.test.teststrategy"
+          match: "basiccheck"
+    tasks:
+      - name: "Execute basiccheck test"
+        files:
+          - jmeter/basiccheck.jmx
+        image: "justb4/jmeter"
+        cmd: "jmeter -n -t /keptn/jmeter/basiccheck.jmx"

@@ -1,0 +1,14 @@
+apiVersion: v1
+actions:
+  - name: "Run jmeter"
+    events:
+      - name: "sh.keptn.event.test.triggered"
+        jsonpath:
+          property: "$.data.test.teststrategy"
+          match: "load"
+    tasks:
+      - name: "Execute load test"
+        files:
+          - jmeter/load.jmx
+        image: "justb4/jmeter"
+        cmd: "jmeter -n -t /keptn/jmeter/load.jmx"

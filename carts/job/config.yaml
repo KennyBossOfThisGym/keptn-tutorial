@@ -10,5 +10,5 @@ actions:
       - name: "Execute load test"
         files:
           - jmeter/load.jmx
-        image: "justb4/jmeter"
+        image: "vmarrazzo/jmeter:latest"
         cmd: "jmeter -n -t /keptn/jmeter/load.jmx"

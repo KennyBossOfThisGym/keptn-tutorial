@@ -14,7 +14,7 @@ spec:
             - name: "test"
               properties:
                 teststrategy: "load"
-            - name: "evaluation"
+            #- name: "evaluation"
             - name: "release"
         - name: "delivery-direct"
           tasks:
@@ -35,7 +35,7 @@ spec:
             - name: "test"
               properties:
                 teststrategy: "basiccheck"
-            - name: "evaluation"
+            #- name: "evaluation"
             - name: "release"
         - name: "rollback"
           triggeredOn:
